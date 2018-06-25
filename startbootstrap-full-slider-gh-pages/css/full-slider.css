@@ -1,0 +1,110 @@
+/*!
+ * Start Bootstrap - Full Slider (https://startbootstrap.com/template-overviews/full-slider)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-slider/blob/master/LICENSE)
+ */
+
+body{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	background: #bfc2c2;
+	position: relative;
+}
+
+nav{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	background: #343a40;
+
+}
+
+
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ .menu{
+ 	width: 100%;
+ 	height: 28px;
+ 	background: #343a40;
+ }
+
+ .menu>.menu-content{
+ 	width: 200px;
+ 	height: 65px;
+ 	float: right;
+ 	font-family: sans-serif;
+ 	font-size: 20px;
+ 	font-weight: bold;
+ 	letter-spacing: -0.05cm;
+ 	position: relative;
+ 	color: #fff;
+ 	line-height: 65px;
+ }
+  .menu>.menu-content>a{
+  	color: #fff;
+  	text-decoration: none;
+  }
+
+  .arrow-up{
+  	width: 0;
+  	height: 0;
+  	position: absolute;
+  	border-left: 20px solid transparent;
+  	border-right: 20px solid transparent;
+  	border-bottom: 20px solid #fff;
+  	right: 273px;
+  	top:50px;
+  }
+
+.login-form{
+	position: absolute;
+	width: 300px;
+	height: auto;
+	background: #fff;
+	right: 130px;
+	top: 70px;
+	border-radius: 2px;
+	border-bottom: 5px solid grey;
+}
+
+.
+.login-form>form{
+	width: 250px;
+	margin: 25px auto;
+	font-size: 16px;
+	font-family: sans-serif;
+	color: grey;
+	letter-spacing: -0.05em;
+}
+input [type="text"],
+input [type="password"]{
+	width: 240px;
+	height: 30px;
+	border: 0px;
+	outline: none;
+	box-shadow: inset 0 0 10px #eee;
+	border-radius: 5px;
+}
+input [type="submit"]{
+	width: 95px;
+	height: 35px;
+	background: #343a40;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: sans-serif,Arial;
+	color: white;
+	outline: none;
+	border:0px;
+	border-radius: 3px;
+	letter-spacing: -0,05em;
+	cursor: pointer;
+}
