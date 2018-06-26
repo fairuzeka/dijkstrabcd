@@ -4,7 +4,6 @@ session_start();
 include 'connect.php';
 $error='';
 
-
 if(isset($_POST['submit'])){
     $nik=$_POST['user'];
     $pass=$_POST['pass'];
@@ -16,6 +15,8 @@ if(isset($_POST['submit'])){
     $get = mysqli_fetch_array($query);
     $level=$get['levelus'];
     $_SESSION['nik']=$nik;
+    //cek session
+    $_SESSION["login"]=true;
     
     if ($level=="atasan"){
         header("location:atasan.php");

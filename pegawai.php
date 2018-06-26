@@ -3,6 +3,12 @@ session_start();
 include 'connect.php';
 //error_reporting(0);
 
+//cek session
+if (!isset($_SESSION["login"])){
+    header ("location:index.php");
+    exit;
+}
+
 if (isset($_POST['submit'])){
     $nik=$_POST['nik'];
     $jenis=$_POST['jenis'];

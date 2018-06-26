@@ -63,18 +63,6 @@ if (isset($_GET['approve'])) {
     
  
 	<div class="container">			
-		<!-- membuat jumbotron -->
-		<div class="jumbotron">
-        
-			<center>			
-				<h2>Selamat datang, Admin</h2>
-				<p>Silahkan cek request dibawah ini</p><br/><br/>
-				
-			</center>
-		</div>
-		<!-- akhir jumbotron -->
-        
-
         <table class="table table-striped">
             <caption>List Approval</caption>
   <thead>
