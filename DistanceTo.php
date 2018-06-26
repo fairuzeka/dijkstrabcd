@@ -14,7 +14,7 @@ class DistanceTo{
 	* @PARAM lng2 double
 	* @RETURN metres
 	*/
-	protected function distanceTo($lat1, $lng1, $lat2, $lng2) 
+	protected function __construct($lat1, $lng1, $lat2, $lng2) 
 	{
 		$earthRadius = 3958.75;
 

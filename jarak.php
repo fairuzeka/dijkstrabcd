@@ -1,8 +1,15 @@
 <?php
 session_start();
+
+
+//cek session
+if (!isset($_SESSION["login"])){
+    header ("location:index.php");
+    exit;
+}
+
 include 'connect.php';
 //error_reporting(0);
-
 
 if (isset($_POST['submit'])){
     $id=$_POST['id'];

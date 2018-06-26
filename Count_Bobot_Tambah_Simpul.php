@@ -1,7 +1,7 @@
 <?php
 class Count_Bobot_Tambah_Simpul extends DistanceTo{
 
-	public function Count_Bobot_Tambah_Simpul($index, $limit, $jArrCoordinates){		
+	public function __construct($index, $limit, $jArrCoordinates){		
 		
 		$bobot = 0;
 		

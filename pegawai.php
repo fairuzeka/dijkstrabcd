@@ -1,13 +1,18 @@
 <?php
 session_start();
-include 'connect.php';
-//error_reporting(0);
 
 //cek session
 if (!isset($_SESSION["login"])){
     header ("location:index.php");
     exit;
 }
+if (!isset($_SESSION["bawahan"])){
+    header ("location:index.php");
+    exit;
+}
+
+include 'connect.php';
+//error_reporting(0);
 
 if (isset($_POST['submit'])){
     $nik=$_POST['nik'];
@@ -98,7 +103,7 @@ if (isset($_POST['submit'])){
                     <div class="form-group">
                     <label for="jenis" class="col-md-4 control-label"> <div align="left"> Jenis Keperluan</div> </label> 
                     	<div class="col-lg-8">
-                        	<select class="form-control" id="jenis" name="jenis">
+                        	<select class="form-control" id="jenis" name="jenis" required>
                             <option value="Regular">Regular</option>
                             <option value="Sosial">Sosial</option>
                             <option value="Event">Event</option>
@@ -114,7 +119,7 @@ if (isset($_POST['submit'])){
                     <div class="form-group">
                     <label for="keperluan" class="col-md-4 control-label"> <div align="left"> Jenis Pemesanan </div> </label>
                         <div class="col-lg-8">
-                            <select class="form-control" id="keperluan" name="keperluan">
+                            <select class="form-control" id="keperluan" name="keperluan" required>
                             <option value="Mobil">Mobil</option>
                             <option value="Mobil dan Sopir">Mobil dan Sopir</option>  
                             </select>
@@ -125,7 +130,7 @@ if (isset($_POST['submit'])){
                     <div class="form-group">
                     <label for="telp" class="col-md-4 control-label"> <div align="left"> No telepon kantor </div> </label>
                     	<div class="col-lg-8">
-                        	<input type="text" class="form-control" id="telp" placeholder="No telepon kantor" name="telp">
+                        	<input type="text" class="form-control" id="telp" placeholder="No telepon kantor" name="telp" required>
                         </div>
                     </div> 
                     
@@ -133,7 +138,7 @@ if (isset($_POST['submit'])){
                     <div class="form-group">
                     <label for="hp" class="col-md-4 control-label"> <div align="left"> No HP </div> </label>
                     	<div class="col-lg-8">
-                        	<input type="text" class="form-control" id="hp" placeholder="No HP" name="hp">
+                        	<input type="text" class="form-control" id="hp" placeholder="No HP" name="hp" required>
                         </div>
                     </div> 
 
@@ -141,7 +146,7 @@ if (isset($_POST['submit'])){
                     <div class="form-group">
                     <label for="ket" class="col-md-4 control-label"> <div align="left"> keterangan </div> </label>
                     	<div class="col-lg-8">
-                        	<input type="text" class="form-control" id="ket" placeholder="keterangan" name="ket">
+                        	<input type="text" class="form-control" id="ket" placeholder="keterangan" name="ket" required>
                         </div>
                     </div>
 

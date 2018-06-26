@@ -15,8 +15,10 @@ if(isset($_POST['submit'])){
     $get = mysqli_fetch_array($query);
     $level=$get['levelus'];
     $_SESSION['nik']=$nik;
-    //cek session
+     //cek session
     $_SESSION["login"]=true;
+    $_SESSION["atasan"]=true;
+    $_SESSION["bawahan"]=true;
     
     if ($level=="atasan"){
         header("location:atasan.php");
@@ -76,7 +78,7 @@ if(isset($_POST['submit'])){
     </head>
     <body>
         <div class="login">
-            <h1 align="center"><marquee>Selamat datang, silahkan login!</marquee></h1>
+            <h2 align="center">Selamat datang, silahkan login!</h2>
             <form method="POST" style="text-align: center;">          	
                 <input type="text" placeholder="NIK" id="user" name="user"> </br></br>              
                 <input type="password" placeholder="Password" id="pass" name="pass"> </br></br>

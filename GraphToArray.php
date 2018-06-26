@@ -60,7 +60,7 @@ class GraphToArray
 		$kolom 		= 0;
 		
 		$select = mysqli_query($this->koneksi, "SELECT * FROM graph order by CONVERT(simpul_awal, SIGNED INTEGER), CONVERT(simpul_tujuan, SIGNED INTEGER) asc");
-		while($field = mysqli_fetch_array($select, MYSQL_ASSOC)){
+		while($field = mysqli_fetch_array($select, MYSQLI_ASSOC)){
 
 			// baris array
 			$baris = $field['simpul_awal'];

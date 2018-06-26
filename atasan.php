@@ -1,7 +1,18 @@
 <?php
 session_start();
-include 'connect.php';
 
+//cek session
+if (!isset($_SESSION["login"])){
+    header ("location:index.php");
+    exit;
+}
+
+if (!isset($_SESSION["atasan"])){
+    header ("location:index.php");
+    exit;
+}
+
+include 'connect.php';
 $requests = mysqli_query($con, "SELECT * FROM requests WHERE status IS NULL");
 
 if (isset($_GET['ignore'])) {
