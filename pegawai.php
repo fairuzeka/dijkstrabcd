@@ -6,11 +6,6 @@ if (!isset($_SESSION["login"])){
     header ("location:index.php");
     exit;
 }
-if (!isset($_SESSION["bawahan"])){
-    header ("location:index.php");
-    exit;
-}
-
 include 'connect.php';
 //error_reporting(0);
 
@@ -149,19 +144,16 @@ if (isset($_POST['submit'])){
                         	<input type="text" class="form-control" id="ket" placeholder="keterangan" name="ket" required>
                         </div>
                     </div>
-
-            
-
                      <div class="form-group">
                         <div class=" col-md-8 col-md-offset-3">
-                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" >
+                            <input type="submit" button class="btn btn-primary" name="submit" value="Submit" >
                             <input type="reset" class="btn btn-default" name="reset" value="Reset" >
                         </div>
+                            <script>
                     </div>
                 </div>
 				</form>
             </div>
-			<br><br><br>
         </div>
 		<script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

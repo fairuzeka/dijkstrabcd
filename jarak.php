@@ -44,6 +44,8 @@ a{
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfUutw5kI2URradTkzL1C409sqildXJNc&callback=initialize" async="" defer=""></script>
 <script src="https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC|Seattle&destinations=San+Francisco|Victoria+BC&mode=bicycling&language=fr-FR&key=AIzaSyDfUutw5kI2URradTkzL1C409sqildXJNc"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
 // map
 var poly = '';
@@ -238,6 +240,12 @@ function send_dijkstra(){
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
+<script>
+function sweetalertclick(){
+swal("Berhasil diinput", "", "success");
+}
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -381,7 +389,7 @@ $obj = json_decode($result, true);
 									<dt>BBM</dt>
 									<dd><input readonly class="form-control" type="text" name="bbm" id="bbm"></dd>
 								</dl>
-								<button type="submit" class="btn btn-primary pull-right" name="submit" value="submit">Simpan</button>
+								<button type="submit" button onclick="sweetalertclick()" class="btn btn-primary pull-right" name="submit" value="submit">Simpan</button>
 							</form>
 						</div>
 					</div>
