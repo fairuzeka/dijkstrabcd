@@ -2,10 +2,17 @@
 session_start();
 
 //cek session
-if (!isset($_SESSION["login"])){
+if (!isset($_SESSION['nik'])){
     header ("location:index.php");
     exit;
 }
+
+//cek level user
+if($_SESSION['levelus']!="pegawai"){
+  header("location:index.php");
+  exit; //jika bukan admin jangan lanjut
+};
+
 include 'connect.php';
 //error_reporting(0);
 
@@ -19,7 +26,7 @@ if (isset($_POST['submit'])){
 
 
     $result=mysqli_query($con, "INSERT INTO requests (nik, pemesanan, keperluan, telp, hp, ket) VALUES ('$nik', '$jenis', '$keperluan', '$telp', '$hp', '$ket')");
-    var_dump($result);
+    //var_dump($result);
 	if($result)
 	{
 		$last_id = mysqli_insert_id($con);

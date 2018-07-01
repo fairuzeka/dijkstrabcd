@@ -1,40 +1,3 @@
-<?php
-
-session_start();
-include 'connect.php';
-$error='';
-
-if(isset($_POST['submit'])){
-    $nik=$_POST['user'];
-    $pass=$_POST['pass'];
-    $query = mysqli_query($con,"SELECT*FROM user2 where password='$pass' and NIK='$nik'");
-    $rows = mysqli_num_rows($query);
-     
-    if ($rows==1){
-  
-    $get = mysqli_fetch_array($query);
-    $level=$get['levelus'];
-    $_SESSION['nik']=$nik;
-     //cek session
-    $_SESSION["login"]=true;
-    $_SESSION["atasan"]=true;
-    $_SESSION["bawahan"]=true;
-    
-    if ($level=="atasan"){
-        header("location:atasan.php");
-    } elseif ($level=="pegawai") {
-        header("location:pegawai.php");
-    }
-   }else{
-       $error="invalid Account";
-   }
-}
-
-?>
-
-
-
-
 
 <!doctype html>
 
@@ -79,13 +42,16 @@ if(isset($_POST['submit'])){
     <body>
         <div class="login">
             <h2 align="center">Selamat datang, silahkan login!</h2>
-            <form method="POST" style="text-align: center;">          	
-                <input type="text" placeholder="NIK" id="user" name="user"> </br></br>              
+            <form action="index.php?opq=in" method="POST" style="text-align: center;">          	
+                <input type="text" placeholder="NIK" id="nik" name="user"> </br></br>              
                 <input type="password" placeholder="Password" id="pass" name="pass"> </br></br>
                 <input type="submit" value="Login" name="submit"> 
                 <span>
-                    <?php echo $error;?>
+                    <? session_start();
+                    echo "$_SESSION['error']"
+                    ?>
                 </span>
+
             </form>
         </div>
     </body>

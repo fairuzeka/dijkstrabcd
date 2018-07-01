@@ -2,15 +2,16 @@
 session_start();
 
 //cek session
-if (!isset($_SESSION["login"])){
+if (!isset($_SESSION['nik'])){
     header ("location:index.php");
     exit;
 }
 
-if (!isset($_SESSION["atasan"])){
-    header ("location:index.php");
-    exit;
-}
+//cek level user
+if($_SESSION['levelus']!="atasan"){
+  header("location:index.php");
+  exit; //jika bukan admin jangan lanjut
+};
 
 include 'connect.php';
 $requests = mysqli_query($con, "SELECT * FROM requests WHERE status IS NULL");
@@ -129,7 +130,7 @@ $details = mysqli_query($con, "SELECT * FROM detail WHERE created_at = '$_GET[de
       <th scope="col">Kota Asal</th>
       <th scope="col">Kota Tujuan</th>
       <th scope="col">Jarak</th>
-      <th scope="col">Setimasi</th>
+      <th scope="col">Estimasi</th>
       <th scope="col">Bensin</th>
     </tr>
   </thead>
